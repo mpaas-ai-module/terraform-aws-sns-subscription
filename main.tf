@@ -5,7 +5,7 @@ resource "aws_sns_topic_subscription" "subscription" {
   subscription_role_arn           = var.protocol == "firehose" ? var.subscription_role_arn : null
   endpoint_auto_confirms          = var.endpoint_auto_confirms
   confirmation_timeout_in_minutes = var.confirmation_timeout_in_minutes
-    lifecycle {
-    ignore_changes = [delivery_policy,filter_policy,redrive_policy]
+  lifecycle {
+    ignore_changes = [delivery_policy, filter_policy, redrive_policy]
   }
 }
